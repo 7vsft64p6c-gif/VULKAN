@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuenta — VULKÁN</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#120e0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vulkan-core.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/vulkan-core.js" defer></script>
+  <script src="assets/cart.js" defer></script>
+  <script src="assets/cart-ui.js" defer></script>
+  <script src="assets/account.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar a cuenta</a>
+  <nav class="site-nav" aria-label="Navegación principal"><div class="container nav-inner"><a class="logo" href="index.html" aria-label="VULKÁN, inicio">VULKÁN<span>.</span></a><div class="nav-links" id="primaryNav"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="order.html">Mi pedido</a></div><div class="nav-actions"><a class="button button-quiet" href="cuenta.html" aria-current="page">Cuenta</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div></nav>
+
+  <main id="contenido">
+    <header class="page-hero container"><p class="eyebrow">Área privada</p><h1>Tu cuenta VULKÁN.</h1><p class="lede">Guarda tus datos de entrega, cambia tu contraseña y consulta los pedidos asociados a tu sesión.</p></header>
+
+    <section class="section-tight narrow" id="accountLoading"><p class="muted" role="status">Cargando cuenta…</p></section>
+
+    <section class="section-tight narrow" id="publicAccount" hidden aria-labelledby="accessTitle">
+      <div class="surface">
+        <h2 id="accessTitle">Accede o crea una cuenta</h2>
+        <div class="tabs" role="tablist" aria-label="Acceso a cuenta"><button class="tab-button" id="loginTab" role="tab" aria-controls="loginPanel" aria-selected="true" type="button">Iniciar sesión</button><button class="tab-button" id="registerTab" role="tab" aria-controls="registerPanel" aria-selected="false" type="button">Crear cuenta</button></div>
+        <div id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+          <form id="loginForm" class="stack"><div class="field"><label for="loginEmail">Correo</label><input id="loginEmail" name="email" type="email" autocomplete="email" maxlength="190" required></div><div class="field"><label for="loginPassword">Contraseña</label><input id="loginPassword" name="password" type="password" autocomplete="current-password" maxlength="4096" required></div><button class="button button-primary" type="submit">Iniciar sesión</button><p class="form-message" data-message="login" role="status"></p></form>
+          <button class="text-button" id="showRecovery" type="button">Olvidé mi contraseña</button>
+        </div>
+        <div id="registerPanel" role="tabpanel" aria-labelledby="registerTab" hidden>
+          <form id="registerForm" class="stack"><div class="field"><label for="registerName">Nombre completo</label><input id="registerName" name="name" autocomplete="name" maxlength="160" required></div><div class="field"><label for="registerPhone">Teléfono</label><input id="registerPhone" name="phone" type="tel" autocomplete="tel" maxlength="40" required></div><div class="field"><label for="registerEmail">Correo</label><input id="registerEmail" name="email" type="email" autocomplete="email" maxlength="190" required></div><div class="field"><label for="registerPassword">Contraseña</label><input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="4096" required><p class="fine-print">Mínimo 12 caracteres, una letra y un número.</p></div><button class="button button-primary" type="submit">Crear cuenta</button><p class="form-message" data-message="register" role="status"></p></form>
+        </div>
+      </div>
+      <div class="surface" id="recoveryPanel" hidden><h2>Recuperar contraseña</h2><form id="recoveryForm" class="stack"><div class="field"><label for="recoveryEmail">Correo</label><input id="recoveryEmail" name="email" type="email" autocomplete="email" maxlength="190" required></div><button class="button button-primary" type="submit">Solicitar enlace</button><p class="form-message" data-message="recovery" role="status"></p></form></div>
+      <div class="surface" id="resetPanel" hidden><h2>Crear nueva contraseña</h2><form id="resetForm" class="stack"><div class="field"><label for="resetPassword">Nueva contraseña</label><input id="resetPassword" name="password" type="password" autocomplete="new-password" minlength="12" maxlength="4096" required><p class="fine-print">Mínimo 12 caracteres, una letra y un número.</p></div><button class="button button-primary" type="submit">Guardar contraseña</button><p class="form-message" data-message="reset" role="status"></p></form></div>
+    </section>
+
+    <section class="section-tight container" id="privateAccount" hidden aria-labelledby="profileTitle">
+      <div class="section-heading"><div><p class="eyebrow" id="accountRole">Cuenta cliente</p><h2 id="profileTitle">Hola, <span id="accountName"></span>.</h2></div><div><button class="button button-secondary" id="logoutButton" type="button">Cerrar sesión</button></div></div>
+      <div class="account-grid">
+        <div class="stack">
+          <form class="surface stack" id="profileForm"><h3>Perfil y entrega habitual</h3><div class="field"><label for="profileName">Nombre</label><input id="profileName" name="name" autocomplete="name" maxlength="160" required></div><div class="field"><label for="profilePhone">Teléfono</label><input id="profilePhone" name="phone" type="tel" autocomplete="tel" maxlength="40" required></div><div class="field"><label for="profileMethod">Método habitual</label><select id="profileMethod" name="shipping_method"><option value="">Sin preferencia</option><option value="arequipa_local">Entrega local en Arequipa</option><option value="provincia_shalom">Envío a provincia por Shalom</option></select></div><div class="field"><label for="profileCity">Ciudad</label><input id="profileCity" name="shipping_city" autocomplete="address-level2" maxlength="120"></div><div class="field"><label for="profileAddress">Dirección</label><input id="profileAddress" name="shipping_address" autocomplete="street-address" maxlength="255"></div><div class="field"><label for="profileReference">Referencia</label><textarea id="profileReference" name="shipping_reference" maxlength="255"></textarea></div><button class="button button-primary" type="submit">Guardar perfil</button><p class="form-message" data-message="profile" role="status"></p></form>
+          <form class="surface stack" id="passwordForm"><h3>Cambiar contraseña</h3><div class="field"><label for="currentPassword">Contraseña actual</label><input id="currentPassword" name="current_password" type="password" autocomplete="current-password" required></div><div class="field"><label for="newPassword">Nueva contraseña</label><input id="newPassword" name="new_password" type="password" autocomplete="new-password" minlength="12" required><p class="fine-print">Mínimo 12 caracteres, una letra y un número.</p></div><button class="button button-primary" type="submit">Cambiar contraseña</button><p class="form-message" data-message="password" role="status"></p></form>
+        </div>
+        <div class="surface"><h3>Mis pedidos</h3><div class="order-list" id="accountOrders" aria-live="polite"><p class="muted">Cargando pedidos…</p></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="logo" href="index.html">VULKÁN<span>.</span></a><p class="fine-print">Tu sesión se conserva en una cookie HttpOnly.</p></div><div class="footer-links"><a href="catalogo.html">Catálogo</a><a href="order.html">Mi pedido</a><a href="mailto:stevebunnies62@gmail.com">Contacto</a></div><p class="fine-print">© <span data-current-year></span> VULKÁN</p></div></footer>
+</body>
+</html>

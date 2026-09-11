@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar pedido — VULKÁN</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <meta name="theme-color" content="#120e0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vulkan-core.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/vulkan-core.js" defer></script>
+  <script src="assets/cart.js" defer></script>
+  <script src="assets/cart-ui.js" defer></script>
+  <script src="assets/checkout.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al formulario</a>
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="VULKÁN, inicio">VULKÁN<span>.</span></a>
+      <div class="nav-links" id="primaryNav"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="order.html">Mi pedido</a></div>
+      <div class="nav-actions">
+        <a class="button button-quiet" href="cuenta.html">Cuenta</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <header class="page-hero container">
+      <p class="eyebrow">Sin cobro en línea</p>
+      <h1>Confirma tu pedido.</h1>
+      <p class="lede">Enviar este formulario crea un pedido pendiente de coordinación. No inicia ni procesa ningún pago.</p>
+    </header>
+    <section class="section-tight container checkout-layout" aria-label="Confirmación de pedido">
+      <form class="checkout-form" id="checkoutForm">
+        <h2>Datos de contacto y entrega</h2>
+        <p class="muted" id="accountHint">Puedes confirmar como invitado o iniciar sesión para guardar tus pedidos.</p>
+        <div class="form-grid">
+          <div class="field"><label for="customerName">Nombre completo</label><input id="customerName" name="name" autocomplete="name" maxlength="160" required></div>
+          <div class="field"><label for="customerPhone">Teléfono</label><input id="customerPhone" name="phone" type="tel" autocomplete="tel" maxlength="40" required></div>
+          <div class="field span-2"><label for="customerEmail">Correo</label><input id="customerEmail" name="email" type="email" autocomplete="email" maxlength="190" required></div>
+          <div class="field span-2"><label for="shippingMethod">Método de entrega</label><select id="shippingMethod" name="shipping_method"><option value="arequipa_local">Entrega local en Arequipa</option><option value="provincia_shalom">Envío a provincia por Shalom</option></select></div>
+          <div class="field" id="cityField"><label for="shippingCity">Ciudad de destino</label><input id="shippingCity" name="city" autocomplete="address-level2" maxlength="120"></div>
+          <div class="field"><label for="shippingAddress">Dirección de entrega</label><input id="shippingAddress" name="address" autocomplete="street-address" maxlength="255" required></div>
+          <div class="field span-2"><label for="shippingReference">Referencia <span class="muted">(opcional)</span></label><textarea id="shippingReference" name="reference" autocomplete="off" maxlength="255"></textarea></div>
+        </div>
+        <p class="form-message" id="checkoutMessage" role="status" aria-live="polite"></p>
+        <div class="form-actions"><button class="button button-primary" id="submitOrder" type="submit" disabled>Confirmar pedido</button><a class="button button-secondary" href="catalogo.html">Volver al catálogo</a></div>
+        <p class="fine-print">Al confirmar, el servidor valida productos, variantes, cantidades, precio mayorista, cupón y entrega. Los pagos en línea permanecen desactivados.</p>
+      </form>
+
+      <aside class="order-summary" aria-labelledby="summaryTitle">
+        <h2 id="summaryTitle">Resumen</h2>
+        <div id="checkoutLines" aria-live="polite"><p class="muted">Cargando carrito…</p></div>
+        <div class="coupon-row"><div class="field"><label class="visually-hidden" for="couponCode">Cupón</label><input id="couponCode" autocomplete="off" maxlength="32" placeholder="Código de cupón"></div><button class="button button-secondary" id="validateCoupon" type="button">Validar</button></div>
+        <p class="form-message" id="couponMessage" role="status" aria-live="polite"></p>
+        <div class="totals">
+          <div><span>Subtotal</span><span id="checkoutSubtotal">—</span></div>
+          <div id="discountRow" hidden><span>Descuento</span><span id="checkoutDiscount">—</span></div>
+          <div><span>Entrega</span><span id="checkoutShipping">—</span></div>
+          <div class="grand-total"><strong>Total estimado</strong><strong id="checkoutTotal">—</strong></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="logo" href="index.html">VULKÁN<span>.</span></a><p class="fine-print">Confirmación de pedido sin cobro en línea.</p></div><div class="footer-links"><a href="catalogo.html">Catálogo</a><a href="cuenta.html">Cuenta</a><a href="order.html">Mi pedido</a></div><p class="fine-print">© <span data-current-year></span> VULKÁN</p></div></footer>
+</body>
+</html>

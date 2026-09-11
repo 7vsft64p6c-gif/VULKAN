@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo — VULKÁN</title>
+  <meta name="description" content="Explora el catálogo VULKÁN, filtra categorías, elige variantes y revisa precios unitarios o mayoristas.">
+  <meta name="theme-color" content="#120e0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vulkan-core.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/vulkan-core.js" defer></script>
+  <script src="assets/cart.js" defer></script>
+  <script src="assets/cart-ui.js" defer></script>
+  <script src="assets/catalog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al catálogo</a>
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="VULKÁN, inicio">VULKÁN<span>.</span></a>
+      <div class="nav-links" id="primaryNav">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html" aria-current="page">Catálogo</a>
+        <a href="index.html#como-comprar">Cómo pedir</a>
+        <a href="order.html">Mi pedido</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button button-quiet" href="cuenta.html">Cuenta</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <header class="page-hero container">
+      <p class="eyebrow" id="catalogHeroCount">Catálogo actualizado</p>
+      <h1>Catálogo completo.</h1>
+      <p class="lede">Productos de fabricación alternativa. Revisa variantes, compatibilidad y disponibilidad antes de confirmar; los importes finales siempre se recalculan en el servidor.</p>
+    </header>
+
+    <section class="section-tight container" aria-labelledby="catalogTitle">
+      <h2 class="visually-hidden" id="catalogTitle">Productos</h2>
+      <div class="catalog-tools">
+        <div class="search-row">
+          <div class="search-input field">
+            <label class="visually-hidden" for="catalogSearch">Buscar por nombre</label>
+            <input id="catalogSearch" type="search" autocomplete="off" placeholder="Buscar por nombre…">
+          </div>
+          <p class="result-count mono" id="resultCount" aria-live="polite">Cargando…</p>
+        </div>
+        <div class="chips" id="categoryChips" aria-label="Filtrar por categoría"></div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="availabilityFilter">Disponibilidad</label>
+            <select id="availabilityFilter"><option value="all">Todos</option><option value="orderable">Disponibles para pedido</option><option value="blocked">No disponibles</option></select>
+          </div>
+          <div class="field">
+            <label for="sortProducts">Ordenar</label>
+            <select id="sortProducts"><option value="catalog">Orden del catálogo</option><option value="name">Nombre A–Z</option><option value="price-asc">Precio menor</option><option value="price-desc">Precio mayor</option></select>
+          </div>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-busy="true"><p class="muted">Cargando catálogo…</p></div>
+      <noscript><p class="form-error">Activa JavaScript para consultar y filtrar el catálogo.</p></noscript>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="productOverlay" hidden>
+    <section class="modal" id="productDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" tabindex="-1">
+      <button class="icon-button modal-close" id="dialogClose" type="button" aria-label="Cerrar detalle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="product-dialog-grid">
+        <div>
+          <div class="dialog-media" id="dialogMedia"></div>
+          <div class="option-list" id="dialogThumbnails" aria-label="Imágenes del producto"></div>
+        </div>
+        <div>
+          <p class="product-category mono" id="dialogCategory"></p>
+          <h2 id="dialogTitle"></h2>
+          <p id="dialogDescription" class="muted"></p>
+          <div class="product-price"><strong id="dialogPrice"></strong><span id="dialogWholesale" class="mono"></span></div>
+          <p id="dialogStatus" class="form-message" aria-live="polite"></p>
+          <fieldset class="option-group" id="colorGroup" hidden><legend>Color</legend><div class="option-list" id="colorOptions"></div></fieldset>
+          <fieldset class="option-group" id="modelGroup" hidden><legend>Modelo</legend><div class="option-list" id="modelOptions"></div></fieldset>
+          <div class="field option-group"><label for="dialogQuantity">Cantidad</label><input id="dialogQuantity" type="number" min="1" max="999" value="1" inputmode="numeric"></div>
+          <div class="form-actions">
+            <button class="button button-primary" id="dialogAdd" type="button">Agregar al carrito</button>
+            <button class="button button-secondary" id="dialogCheckout" type="button">Agregar y confirmar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html">VULKÁN<span>.</span></a><p class="fine-print">Precios y disponibilidad sujetos a validación al confirmar.</p></div>
+      <div class="footer-links"><a href="index.html">Inicio</a><a href="cuenta.html">Cuenta</a><a href="order.html">Mi pedido</a><a href="mailto:stevebunnies62@gmail.com">Contacto</a></div>
+      <p class="fine-print">© <span data-current-year></span> VULKÁN</p>
+    </div>
+  </footer>
+</body>
+</html>

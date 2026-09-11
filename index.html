@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VULKÁN — Tecnología de fabricación alternativa</title>
+  <meta name="description" content="Catálogo VULKÁN de tecnología de fabricación alternativa con precios unitarios, opciones mayoristas y variantes visibles.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VULKÁN — Tecnología de fabricación alternativa">
+  <meta property="og:description" content="Explora el catálogo, elige variantes y confirma tu pedido con precios validados por el servidor.">
+  <meta name="theme-color" content="#120e0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/img/vulkan-hero.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/vulkan-core.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"VULKÁN","description":"Catálogo de tecnología de fabricación alternativa","currenciesAccepted":"PEN","email":"stevebunnies62@gmail.com"}</script>
+  <script src="assets/vulkan-core.js" defer></script>
+  <script src="assets/cart.js" defer></script>
+  <script src="assets/cart-ui.js" defer></script>
+  <script src="assets/home.js" defer></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="vulkan-intro" id="vulkanIntro" role="dialog" aria-modal="true" aria-label="Presentación de VULKÁN">
+    <div class="intro-mark" aria-hidden="true">
+      <span class="intro-word">VULKÁN<em>.</em></span>
+      <span class="intro-kicker">Tecnología · Precio visible</span>
+    </div>
+    <button class="intro-skip" type="button">Saltar presentación</button>
+  </div>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="VULKÁN, inicio">VULKÁN<span>.</span></a>
+      <div class="nav-links" id="primaryNav">
+        <a href="#catalogo">Selección</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#como-comprar">Cómo pedir</a>
+        <a href="catalogo.html">Catálogo completo</a>
+        <a href="order.html">Mi pedido</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button button-quiet" href="cuenta.html">Cuenta</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section class="hero hero-v2" aria-labelledby="heroTitle">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/img/vulkan-hero.png" alt="" width="1672" height="941" fetchpriority="high">
+      </div>
+      <canvas id="emberCanvas" aria-hidden="true"></canvas>
+      <div class="container hero-content">
+        <p class="eyebrow">Catálogo VULKÁN</p>
+        <h1 id="heroTitle"><span class="brand-line">Tecnología alternativa</span>Elige con <em>claridad.</em></h1>
+        <p>Consulta precios, variantes y opciones mayoristas de productos de fabricación alternativa. Confirma compatibilidad y disponibilidad antes de enviar tu pedido.</p>
+        <div class="hero-ctas">
+          <a class="button button-primary" href="catalogo.html">Explorar catálogo</a>
+          <a class="button button-secondary" href="#como-comprar">Cómo funciona</a>
+        </div>
+        <div class="hero-proof" aria-label="Datos del catálogo">
+          <span>Precio visible</span>
+          <span>Mayorista desde 3 unidades iguales</span>
+          <span>Disponibilidad por confirmar</span>
+        </div>
+      </div>
+      <span class="hero-scroll-cue" aria-hidden="true">Explora</span>
+    </section>
+
+    <section class="fact-strip" aria-label="Información de compra">
+      <div><strong id="homeProductCount">Catálogo en carga</strong><span>Productos organizados por categoría.</span></div>
+      <div><strong>Precios en soles</strong><span>El servidor vuelve a calcular cada pedido.</span></div>
+      <div><strong>Cupones validados</strong><span>Las promociones activas se confirman en el servidor.</span></div>
+    </section>
+
+    <section class="section" id="catalogo" aria-labelledby="selectionTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Selección del catálogo</p><h2 id="selectionTitle">Un vistazo antes de explorar.</h2></div>
+          <p>Una muestra determinista de productos disponibles con imagen. No representa un ranking ni una recomendación personalizada.</p>
+        </div>
+        <div class="product-grid" id="homeFeatured" aria-live="polite"><p class="muted">Cargando selección…</p></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="categorias" aria-labelledby="categoriesTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Navegación real</p><h2 id="categoriesTitle">Compra por categoría.</h2></div>
+          <p>Las categorías se cargan directamente desde el catálogo para mantener nombres y enlaces alineados.</p>
+        </div>
+        <div class="category-grid" id="homeCategories"><p class="muted">Cargando categorías…</p></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="wholesaleTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Compra mayorista</p><h2 id="wholesaleTitle">Tres o más del mismo producto.</h2></div>
+          <p>El precio mayorista se aplica por la cantidad total del mismo producto, incluso si eliges variantes distintas. El servidor decide el importe final.</p>
+        </div>
+        <div class="product-grid" id="homeWholesale" aria-live="polite"><p class="muted">Cargando opciones mayoristas…</p></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="benefitsTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Información antes de pedir</p><h2 id="benefitsTitle">Decisiones sin letra pequeña.</h2></div>
+          <p>El sitio diferencia precio, descuento, entrega y estado del pedido. Ningún total enviado por el navegador se acepta como definitivo.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card"><h3>Precio autoritativo</h3><p>El backend lee el catálogo y recalcula cantidades, mayorista, cupón y entrega.</p></article>
+          <article class="benefit-card"><h3>Variantes conservadas</h3><p>Color y modelo elegidos acompañan cada línea del carrito y del pedido.</p></article>
+          <article class="benefit-card"><h3>Acceso privado</h3><p>Los pedidos se consultan con sesión de cuenta o con un token del navegador, no solo con correo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-comprar" aria-labelledby="stepsTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Cómo pedir</p><h2 id="stepsTitle">Del catálogo a la confirmación.</h2></div>
+          <p>Los pagos en línea no están habilitados. Enviar el formulario crea un pedido pendiente de coordinación, sin cobrarte.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><p class="step-number mono">01 · EXPLORA</p><h3>Elige producto y variantes</h3><p>Revisa el precio visible y selecciona color o modelo cuando corresponda.</p></article>
+          <article class="step-card"><p class="step-number mono">02 · REVISA</p><h3>Ajusta cantidades</h3><p>El carrito muestra una estimación y aplica mayorista desde tres unidades iguales.</p></article>
+          <article class="step-card"><p class="step-number mono">03 · CONFIRMA</p><h3>Envía el pedido</h3><p>El servidor valida todo y devuelve un número privado para seguimiento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" aria-labelledby="contactTitle">
+      <div class="container cta-band">
+        <p class="eyebrow">Arequipa y envíos a provincia</p>
+        <h2 id="contactTitle">¿Necesitas confirmar compatibilidad?</h2>
+        <p>Escríbenos antes de enviar tu pedido si necesitas comprobar una variante, contenido o compatibilidad específica.</p>
+        <div class="hero-ctas">
+          <a class="button button-primary" href="mailto:stevebunnies62@gmail.com">Enviar correo</a>
+          <a class="button button-secondary" href="catalogo.html">Ver catálogo completo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html">VULKÁN<span>.</span></a><p class="fine-print">Tecnología de fabricación alternativa. Confirma disponibilidad y compatibilidad.</p></div>
+      <div class="footer-links"><a href="catalogo.html">Catálogo</a><a href="cuenta.html">Cuenta</a><a href="order.html">Mi pedido</a><a href="mailto:stevebunnies62@gmail.com">Contacto</a></div>
+      <p class="fine-print">© <span data-current-year></span> VULKÁN</p>
+    </div>
+  </footer>
+</body>
+</html>

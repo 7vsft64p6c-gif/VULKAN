@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi pedido — VULKÁN</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <meta name="theme-color" content="#120e0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vulkan-core.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/vulkan-core.js" defer></script>
+  <script src="assets/cart.js" defer></script>
+  <script src="assets/cart-ui.js" defer></script>
+  <script src="assets/order.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al pedido</a>
+  <nav class="site-nav" aria-label="Navegación principal"><div class="container nav-inner"><a class="logo" href="index.html" aria-label="VULKÁN, inicio">VULKÁN<span>.</span></a><div class="nav-links" id="primaryNav"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="order.html" aria-current="page">Mi pedido</a></div><div class="nav-actions"><a class="button button-quiet" href="cuenta.html">Cuenta</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div></nav>
+  <main id="contenido">
+    <header class="page-hero narrow"><p class="eyebrow">Seguimiento privado</p><h1>Consulta tu pedido.</h1><p class="lede">Una cuenta permite abrir todo tu historial. Como invitado, este navegador conserva temporalmente el acceso al último pedido confirmado.</p></header>
+    <section class="section-tight narrow">
+      <form class="surface" id="orderLookup"><div class="field"><label for="orderNumber">Número de pedido</label><input id="orderNumber" name="order_number" autocomplete="off" placeholder="ORD-000001" pattern="ORD-[0-9]{6,12}" maxlength="16" required></div><div class="form-actions"><button class="button button-primary" type="submit">Consultar pedido</button><a class="button button-secondary" href="cuenta.html">Ver mi cuenta</a></div><p class="form-message" id="lookupMessage" role="status" aria-live="polite"></p></form>
+    </section>
+    <section class="section-tight narrow" id="orderResult" hidden aria-live="polite"></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="logo" href="index.html">VULKÁN<span>.</span></a><p class="fine-print">El número por sí solo no concede acceso al detalle.</p></div><div class="footer-links"><a href="catalogo.html">Catálogo</a><a href="cuenta.html">Cuenta</a><a href="mailto:stevebunnies62@gmail.com">Contacto</a></div><p class="fine-print">© <span data-current-year></span> VULKÁN</p></div></footer>
+</body>
+</html>
