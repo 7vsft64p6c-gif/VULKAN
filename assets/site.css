@@ -452,3 +452,176 @@ fieldset { margin: 0; padding: 0; border: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+
+/* =========================================================
+   WHATSAPP FLOTANTE VULKÁN
+   PC + CELULAR + IPAD
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+
+  width: 58px;
+  height: 58px;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.30),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ICONO */
+
+.whatsapp-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}
+
+/* MENSAJE */
+
+.whatsapp-tooltip {
+  position: absolute;
+
+  left: 70px;
+  bottom: 50%;
+
+  transform: translateY(50%) translateX(-8px);
+
+  background: #15110e;
+  color: #fff;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* PEQUEÑA FLECHA */
+
+.whatsapp-tooltip::before {
+  content: "";
+
+  position: absolute;
+
+  left: -6px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #15110e;
+}
+
+/* HOVER EN PC */
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(50%) translateX(0);
+}
+
+/* ACCESIBILIDAD */
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid rgba(255,255,255,0.9);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   TABLET / IPAD
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .whatsapp-float {
+    left: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+  }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    left: 14px;
+    bottom: 14px;
+
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  /*
+   En celulares no dependemos de hover.
+   El botón sigue siendo únicamente el círculo.
+  */
+
+  .whatsapp-tooltip {
+    left: 64px;
+
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+}
