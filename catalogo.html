@@ -105,21 +105,278 @@
       <p class="fine-print">© <span data-current-year></span> VULKÁN</p>
     </div>
   </footer>
-  <!-- WHATSAPP FLOTANTE -->
+<!-- VULKÁN - WHATSAPP FLOTANTE -->
 <a
+  id="vulkanWhatsapp"
   href="https://wa.me/51951371573?text=Hola%20VULK%C3%81N%2C%20quiero%20hacer%20un%20pedido."
-  class="whatsapp-float"
-  aria-label="Haz tu pedido acá por WhatsApp"
   target="_blank"
   rel="noopener noreferrer"
+  aria-label="Haz tu pedido acá por WhatsApp"
 >
-  <span class="whatsapp-tooltip">Haz tu pedido acá</span>
+  <span id="vulkanWhatsappText">Haz tu pedido acá</span>
 
-  <span class="whatsapp-icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.4-1.7c1.7.9 3.6 1.3 5.5 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.3ZM12.1 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.8 1 1-3.7-.2-.3a9.6 9.6 0 1 1 8.1 4.5Zm5.3-7.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/>
+  <span id="vulkanWhatsappIcon">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.16 1.6 5.97L0 24l6.28-1.65a11.9 11.9 0 0 0 5.77 1.48h.01c6.56 0 11.9-5.33 11.9-11.9 0-3.18-1.23-6.17-3.44-8.45ZM12.06 21.86h-.01c-1.8 0-3.57-.48-5.11-1.39l-.37-.22-3.73.98 1-3.64-.24-.37a9.88 9.88 0 1 1 8.46 4.64Zm5.42-7.41c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
     </svg>
   </span>
 </a>
+
+<style>
+/* =========================================================
+   VULKÁN — WHATSAPP FLOTANTE
+   AISLADO PARA EVITAR CONFLICTOS CON OTROS CSS
+   ========================================================= */
+
+#vulkanWhatsapp {
+  position: fixed !important;
+
+  right: 20px !important;
+  bottom: 20px !important;
+  left: auto !important;
+  top: auto !important;
+
+  width: 58px !important;
+  height: 58px !important;
+
+  min-width: 58px !important;
+  min-height: 58px !important;
+
+  max-width: 58px !important;
+  max-height: 58px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+
+  background: #25D366 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+
+  z-index: 2147483647 !important;
+
+  text-decoration: none !important;
+
+  overflow: visible !important;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.35) !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+
+/* ICONO WHATSAPP */
+
+#vulkanWhatsappIcon {
+  position: relative !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  min-width: 30px !important;
+  min-height: 30px !important;
+
+  max-width: 30px !important;
+  max-height: 30px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: block !important;
+
+  box-sizing: border-box !important;
+
+  line-height: 0 !important;
+}
+
+
+#vulkanWhatsappIcon svg {
+  display: block !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  min-width: 30px !important;
+  min-height: 30px !important;
+
+  max-width: 30px !important;
+  max-height: 30px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  fill: #ffffff !important;
+
+  stroke: none !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* TEXTO */
+
+#vulkanWhatsappText {
+  position: absolute !important;
+
+  right: 68px !important;
+  top: 50% !important;
+
+  transform:
+    translateY(-50%)
+    translateX(8px) !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  padding: 9px 13px !important;
+  margin: 0 !important;
+
+  background: #15110e !important;
+  color: #ffffff !important;
+
+  border-radius: 8px !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+
+  line-height: 1.2 !important;
+
+  white-space: nowrap !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  pointer-events: none !important;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease !important;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* FLECHA */
+
+#vulkanWhatsappText::after {
+  content: "" !important;
+
+  position: absolute !important;
+
+  right: -6px !important;
+  top: 50% !important;
+
+  transform: translateY(-50%) !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  border-top: 6px solid transparent !important;
+  border-bottom: 6px solid transparent !important;
+  border-left: 6px solid #15110e !important;
+}
+
+
+/* HOVER PC */
+
+#vulkanWhatsapp:hover {
+  transform: scale(1.08) !important;
+
+  box-shadow:
+    0 7px 25px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(37, 211, 102, 0.35) !important;
+}
+
+
+#vulkanWhatsapp:hover #vulkanWhatsappText {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform:
+    translateY(-50%)
+    translateX(0) !important;
+}
+
+
+/* TABLET / IPAD */
+
+@media (max-width: 900px) {
+
+  #vulkanWhatsapp {
+    right: 18px !important;
+    bottom: 18px !important;
+
+    width: 56px !important;
+    height: 56px !important;
+
+    min-width: 56px !important;
+    min-height: 56px !important;
+
+    max-width: 56px !important;
+    max-height: 56px !important;
+  }
+
+  #vulkanWhatsappIcon,
+  #vulkanWhatsappIcon svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  #vulkanWhatsapp {
+    right: 14px !important;
+    bottom: 14px !important;
+
+    width: 54px !important;
+    height: 54px !important;
+
+    min-width: 54px !important;
+    min-height: 54px !important;
+
+    max-width: 54px !important;
+    max-height: 54px !important;
+  }
+
+  #vulkanWhatsappIcon,
+  #vulkanWhatsappIcon svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+}
+
+
+/* RESPETA USUARIOS QUE REDUCEN ANIMACIONES */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #vulkanWhatsapp,
+  #vulkanWhatsappText {
+    transition: none !important;
+  }
+
+}
+</style>
 </body>
 </html>
