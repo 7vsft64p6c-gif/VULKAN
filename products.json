@@ -491,38 +491,6 @@
       "modelos": []
     },
     {
-      "id": "p026-go6-jbl",
-      "name": "Go6 JBL",
-      "category": "parlantes",
-      "price_cents": 6290,
-      "price_display": "S/62.90",
-      "status": "Agotado",
-      "stock": 0,
-      "desc": "",
-      "images": [
-        "assets/img/25.png"
-      ],
-      "colores": [
-        {
-          "nombre": "Azul",
-          "imagen": ""
-        },
-        {
-          "nombre": "Negro",
-          "imagen": ""
-        },
-        {
-          "nombre": "Rojo",
-          "imagen": ""
-        },
-        {
-          "nombre": "Morado",
-          "imagen": ""
-        }
-      ],
-      "modelos": []
-    },
-    {
       "id": "p027-go4-pro-jbl",
       "name": "Go4 Pro JBL",
       "category": "parlantes",
